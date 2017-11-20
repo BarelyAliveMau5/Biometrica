@@ -16,6 +16,7 @@
 package gerenciador;
 
 import com.machinezoo.sourceafis.FingerprintTemplate;
+import java.util.Base64;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Perfil {
     private final int id;
     private final String nome;
     private final Posicoes posicao;
-    private byte[] imagem_perfil;
+    private String imagem_perfil;
     private final FingerprintTemplate template;
     private final String digital_str;
             
@@ -53,7 +54,7 @@ public class Perfil {
     }
 
     public byte[] getImagem_perfil() {
-        return imagem_perfil;
+        return Base64.getDecoder().decode(imagem_perfil);
     }
     
     public int getID() {
@@ -65,6 +66,6 @@ public class Perfil {
     }
     
     public void setImagemPerfil(byte[] imagem) {
-        imagem_perfil = imagem;
+        imagem_perfil = Base64.getEncoder().encodeToString(imagem);
     }
 }
