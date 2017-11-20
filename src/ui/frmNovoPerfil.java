@@ -18,6 +18,8 @@ package ui;
 import gerenciador.Controle;
 import gerenciador.Perfil;
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import javax.swing.JOptionPane;
 
 /**
@@ -28,6 +30,7 @@ public class frmNovoPerfil extends javax.swing.JFrame {
 
     private final Controle ctl;
     private File imgDigital;
+    private File imgPerfil;
     /**
      * Creates new form frmNovoPerfil
      * @param ctl controlador
@@ -115,6 +118,11 @@ public class frmNovoPerfil extends javax.swing.JFrame {
         _btnApagarDigital.setEnabled(false);
 
         btnCarregarFoto.setText("Carregar");
+        btnCarregarFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCarregarFotoActionPerformed(evt);
+            }
+        });
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox2.setEnabled(false);
@@ -239,22 +247,36 @@ public class frmNovoPerfil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarActionPerformed
-        int id_novo_usr = new Controle() {
-            public int criarUsuario() {
-                Perfil.Posicoes pos = Perfil.Posicoes.valueOf(cbPosicao.getSelectedItem().toString());
-                return super.criarUsuario(imgDigital, null, txtNome.getText(), pos, null);
-            }
-        }.criarUsuario();
+        int id_novo_usr = 0;
+        try {
+            id_novo_usr = new Controle() {
+                public int criarUsuario() throws IOException {
+                    Perfil.Posicoes pos = Perfil.Posicoes.valueOf(cbPosicao.getSelectedItem().toString());
+                    byte[] img;
+                    img = Files.readAllBytes(imgPerfil.toPath());
+                    return super.criarUsuario(imgDigital, null, txtNome.getText(), pos, img);
+                }
+            }.criarUsuario();
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Erro na leitura da imagem. " + ex.getMessage(), "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+        }
         if (id_novo_usr > 0) 
-            JOptionPane.showMessageDialog(null, "Usuario criado. ID = " + String.valueOf(id_novo_usr));
+            JOptionPane.showMessageDialog(null, "Usuario criado. ID = " + String.valueOf(id_novo_usr),
+                    "Sucesso", JOptionPane.INFORMATION_MESSAGE);
         else
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro.");
+            JOptionPane.showMessageDialog(null, "Ocorreu algum erro na escrita dos dados.", "Erro" ,
+                    JOptionPane.ERROR_MESSAGE);
             
     }//GEN-LAST:event_btnCriarActionPerformed
 
     private void btnCarregarDigitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarDigitalActionPerformed
         imgDigital = frmAutenticar.carregarImagem(lblDigital);
     }//GEN-LAST:event_btnCarregarDigitalActionPerformed
+
+    private void btnCarregarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarFotoActionPerformed
+        imgPerfil = frmAutenticar.carregarImagem(lblFoto);
+    }//GEN-LAST:event_btnCarregarFotoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _btnApagar;
