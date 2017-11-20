@@ -106,14 +106,14 @@ public class frmPerfil extends javax.swing.JFrame {
 
         lblPosicao_.setText("Posição:");
 
-        lblNome.setText("CARLOS MINC BAUMFELD");
+        lblNome.setText("-");
         lblNome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblID.setText("11");
+        lblID.setText("-");
         lblID.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblID.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
-        lblPosicao.setText("MINISTRO DO MEIO AMBIENTE");
+        lblPosicao.setText("-");
         lblPosicao.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblPosicao.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 

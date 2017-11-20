@@ -73,7 +73,7 @@
         <Component class="javax.swing.JLabel" name="lblSelDigital">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Selecionar &lt;br&gt;imagem &lt;br /&gt; da digital&lt;/div&gt;&lt;/html&gt;"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;div style=&apos;text-align: center;&apos;&gt;Clique aqui &lt;br&gt;p/ selecionar &lt;br&gt;a imagem &lt;br /&gt; da digital&lt;/div&gt;&lt;/html&gt;"/>
             <Property name="focusCycleRoot" type="boolean" value="true"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">

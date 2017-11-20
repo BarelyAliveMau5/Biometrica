@@ -83,7 +83,7 @@ public class frmAutenticar extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         lblSelDigital.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblSelDigital.setText("<html><div style='text-align: center;'>Selecionar <br>imagem <br /> da digital</div></html>");
+        lblSelDigital.setText("<html><div style='text-align: center;'>Clique aqui <br>p/ selecionar <br>a imagem <br /> da digital</div></html>");
         lblSelDigital.setFocusCycleRoot(true);
         lblSelDigital.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lblSelDigital.setNextFocusableComponent(btnAcessar);
