@@ -36,10 +36,10 @@ public class BancoDeDados {
     
     private class data_json {
         public ArrayList<String> arquivos;  // arquivos de perfis
-        public Integer last_id;
+        public Integer prox_id;
         
         public data_json() {
-            last_id = 1;
+            prox_id = 1;
             arquivos = new ArrayList<>();
         }
     }
@@ -63,7 +63,7 @@ public class BancoDeDados {
                 Writer writer = new FileWriter(arquivo_db);
                 gson.toJson(dados_arquivos,writer);
                 writer.flush();
-                dados_arquivos.last_id = 1;
+                dados_arquivos.prox_id = 1;
             }
             else {
                 Gson gson = new Gson();
@@ -93,7 +93,7 @@ public class BancoDeDados {
             gson.toJson(perfil, writer);
             writer.flush();
             
-            dados_arquivos.last_id++;
+            dados_arquivos.prox_id++;
             dados_arquivos.arquivos.add(String.valueOf(fazerNomeArquivo(perfil.getID())));
             
             writer = new FileWriter(arquivo_db.getPath());
@@ -131,6 +131,6 @@ public class BancoDeDados {
     }
     
     public int getProximoID() {
-        return dados_arquivos.last_id;
+        return dados_arquivos.prox_id;
     } 
 }
