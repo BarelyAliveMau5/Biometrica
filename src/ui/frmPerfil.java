@@ -16,6 +16,7 @@
 package ui;
 
 import gerenciador.Perfil;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 
 /**
@@ -41,7 +42,12 @@ public class frmPerfil extends javax.swing.JFrame {
         if (perfil.getImagem_perfil() == null)
             lblPerfil.setIcon(new ImageIcon(ClassLoader.getSystemResource("res/no_profile.png")));
         else
-            lblPerfil.setIcon(new ImageIcon(perfil.getImagem_perfil()));
+            lblPerfil.setIcon(new ImageIcon(
+                    new ImageIcon(perfil.getImagem_perfil())
+                            .getImage()
+                            .getScaledInstance(lblPerfil.getWidth(), 
+                                               lblPerfil.getHeight(), 
+                                               Image.SCALE_DEFAULT)));
         lblID.setText(String.valueOf(perfil.getID()));
         lblNome.setText(perfil.getNome());
         lblPosicao.setText(perfil.getPosicao().toString());
