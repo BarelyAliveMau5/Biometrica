@@ -21,6 +21,7 @@ import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -143,7 +144,9 @@ public class frmAutenticar extends javax.swing.JFrame {
                 frmPerfil frmperfil = new frmPerfil(this, perfil);
                 frmperfil.setVisible(true);
                 this.setVisible(false);
-            }
+            } else
+                JOptionPane.showMessageDialog(null, "Digital não reconhecida ou não registrada.", "Erro" ,
+                    JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAcessarActionPerformed
 
