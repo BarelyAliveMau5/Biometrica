@@ -252,8 +252,9 @@ public class frmNovoPerfil extends javax.swing.JFrame {
             id_novo_usr = new Controle() {
                 public int criarUsuario() throws IOException {
                     Perfil.Posicoes pos = Perfil.Posicoes.valueOf(cbPosicao.getSelectedItem().toString());
-                    byte[] img;
-                    img = Files.readAllBytes(imgPerfil.toPath());
+                    byte[] img = null;
+                    if (imgPerfil != null)
+                        img = Files.readAllBytes(imgPerfil.toPath());
                     return super.criarUsuario(imgDigital, null, txtNome.getText(), pos, img);
                 }
             }.criarUsuario();
@@ -264,10 +265,14 @@ public class frmNovoPerfil extends javax.swing.JFrame {
         if (id_novo_usr > 0) 
             JOptionPane.showMessageDialog(null, "Usuario criado. ID = " + String.valueOf(id_novo_usr),
                     "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-        else
-            JOptionPane.showMessageDialog(null, "Ocorreu algum erro na escrita dos dados.", "Erro" ,
+        else {
+            if (id_novo_usr < 0) 
+                JOptionPane.showMessageDialog(null, "Digital já cadastrada.", "Erro" ,
                     JOptionPane.ERROR_MESSAGE);
-            
+            else
+                JOptionPane.showMessageDialog(null, "Ocorreu algum erro na escrita dos dados.", "Erro" ,
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCriarActionPerformed
 
     private void btnCarregarDigitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarDigitalActionPerformed

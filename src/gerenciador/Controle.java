@@ -118,12 +118,18 @@ public class Controle {
             Perfil.Posicoes posicao, byte[] imagem_perfil) {
         
         int id = banco.getProximoID();
-        byte[] img = null;
+        byte[] img;
         
         try {
             img = Files.readAllBytes(digital.getAbsoluteFile().toPath());
         } catch (IOException ex) {
             LOGGER.log(Level.SEVERE, "Erro ao ler imagem. ", ex);
+            return 0;
+        }
+        
+        if (testeUsuario(digital, dpi) != null) {
+            LOGGER.log(Level.WARNING, "Digital já cadastrado.");
+            return -1;
         }
         
         Perfil novo_pefil;

@@ -34,8 +34,8 @@ public class Biometrica {
         Controle ctl = new Controle();
         
         if (args.length > 0) 
-            if (args[0].equals("-dev")) {
-                System.out.println("Executando menu de desenvolvedor");
+            if (args[0].equals("-c")) {
+                System.out.println("Executando menu de criação");
                 frmNovoPerfil novo_perf = new frmNovoPerfil(ctl);
                 novo_perf.setVisible(true);
                 return;

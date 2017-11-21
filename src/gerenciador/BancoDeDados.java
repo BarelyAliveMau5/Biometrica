@@ -122,7 +122,7 @@ public class BancoDeDados {
         return perfis;
     }
     
-    public Perfil getPerfil(int id) {
+    protected Perfil getPerfil(int id) {
         for (Perfil perfil : perfis()) {
             if (perfil.getID() == id)
                 return perfil;
