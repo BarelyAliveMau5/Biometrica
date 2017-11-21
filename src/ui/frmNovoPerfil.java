@@ -67,8 +67,6 @@ public class frmNovoPerfil extends javax.swing.JFrame {
         btnCarregarFoto = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         _btnApagar = new javax.swing.JButton();
-        slNIvel = new javax.swing.JSlider();
-        _lblNIvelAcesso = new javax.swing.JLabel();
         _lblDPI = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
@@ -130,16 +128,6 @@ public class frmNovoPerfil extends javax.swing.JFrame {
         _btnApagar.setText("Apagar perfil");
         _btnApagar.setEnabled(false);
 
-        slNIvel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        slNIvel.setMaximum(3);
-        slNIvel.setMinimum(1);
-        slNIvel.setPaintLabels(true);
-        slNIvel.setPaintTicks(true);
-        slNIvel.setSnapToTicks(true);
-        slNIvel.setEnabled(false);
-
-        _lblNIvelAcesso.setText("Nivel de acesso:");
-
         _lblDPI.setText("DPI (0 = ignorado):");
 
         jTextField1.setText("0");
@@ -159,16 +147,15 @@ public class frmNovoPerfil extends javax.swing.JFrame {
                                         .addComponent(_lblDigitais)
                                         .addGap(83, 83, 83)
                                         .addComponent(_lblDPI)
-                                        .addGap(0, 0, Short.MAX_VALUE))
+                                        .addGap(0, 79, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(_lblNIvelAcesso)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(0, 0, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(slNIvel, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(spID, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                                 .addComponent(cbPosicao, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)))))
+                                                .addComponent(txtNome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)))
+                                        .addGap(9, 9, 9)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnCarregarFoto)
                                     .addComponent(pnFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -213,10 +200,6 @@ public class frmNovoPerfil extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(_lblPosicao)
                             .addComponent(cbPosicao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(_lblNIvelAcesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(slNIvel, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(_lblDigitais)
@@ -290,7 +273,6 @@ public class frmNovoPerfil extends javax.swing.JFrame {
     private javax.swing.JLabel _lblDigitais;
     private javax.swing.JLabel _lblFoto;
     private javax.swing.JLabel _lblID;
-    private javax.swing.JLabel _lblNIvelAcesso;
     private javax.swing.JLabel _lblNome;
     private javax.swing.JLabel _lblPosicao;
     private javax.swing.JButton btnCarregarDigital;
@@ -303,7 +285,6 @@ public class frmNovoPerfil extends javax.swing.JFrame {
     private javax.swing.JLabel lblFoto;
     private javax.swing.JPanel pnDigital;
     private javax.swing.JPanel pnFoto;
-    private javax.swing.JSlider slNIvel;
     private javax.swing.JSpinner spID;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables

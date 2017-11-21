@@ -36,19 +36,18 @@
                                       <Component id="_lblDigitais" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                                       <Component id="_lblDPI" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="79" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="_lblNIvelAcesso" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="slNIvel" min="-2" pref="233" max="-2" attributes="0"/>
                                           <Component id="spID" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                               <Component id="cbPosicao" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtNome" alignment="0" pref="224" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -108,11 +107,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="_lblPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cbPosicao" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="_lblNIvelAcesso" alignment="0" max="32767" attributes="0"/>
-                          <Component id="slNIvel" alignment="0" min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -279,24 +273,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Apagar perfil"/>
         <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JSlider" name="slNIvel">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="14" style="1"/>
-        </Property>
-        <Property name="maximum" type="int" value="3"/>
-        <Property name="minimum" type="int" value="1"/>
-        <Property name="paintLabels" type="boolean" value="true"/>
-        <Property name="paintTicks" type="boolean" value="true"/>
-        <Property name="snapToTicks" type="boolean" value="true"/>
-        <Property name="enabled" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="_lblNIvelAcesso">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nivel de acesso:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="_lblDPI">
