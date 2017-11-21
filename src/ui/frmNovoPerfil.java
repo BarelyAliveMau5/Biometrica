@@ -259,11 +259,11 @@ public class frmNovoPerfil extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCriarActionPerformed
 
     private void btnCarregarDigitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarDigitalActionPerformed
-        imgDigital = frmAutenticar.carregarImagem(lblDigital);
+        imgDigital = Utilidade.carregarImagem(lblDigital);
     }//GEN-LAST:event_btnCarregarDigitalActionPerformed
 
     private void btnCarregarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCarregarFotoActionPerformed
-        imgPerfil = frmAutenticar.carregarImagem(lblFoto);
+        imgPerfil = Utilidade.carregarImagem(lblFoto);
     }//GEN-LAST:event_btnCarregarFotoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -26,7 +26,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
- * @author user
+ * @author BarelyAliveMau5
  */
 public class frmAutenticar extends javax.swing.JFrame {
 
@@ -114,29 +114,6 @@ public class frmAutenticar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static File carregarImagem(javax.swing.JLabel lbl) {
-        JFileChooser escolhedor = new JFileChooser();
-        escolhedor.setCurrentDirectory(new File(System.getProperty("user.home")));
-        
-        FileNameExtensionFilter filtro; 
-        filtro = new FileNameExtensionFilter("Imagens (*.jpg, *.png)", "png","jpg","jpeg");
-      
-        escolhedor.addChoosableFileFilter(filtro);
-        escolhedor.removeChoosableFileFilter(escolhedor.getFileFilter());
-        escolhedor.setFileFilter(filtro);
-        
-        escolhedor.setMultiSelectionEnabled(false);
-        int resultado = escolhedor.showOpenDialog(null);
-        if (resultado == JFileChooser.APPROVE_OPTION) {
-            File arquivo = escolhedor.getSelectedFile();
-            lbl.setIcon(new ImageIcon(new ImageIcon(arquivo.getAbsolutePath())
-                    .getImage()
-                    .getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_DEFAULT)));
-            return arquivo;
-        }
-        return null;
-    }
-    
     private void btnAcessarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcessarActionPerformed
         if (digital_selecionada != null) {
             Perfil perfil = ctl.testeUsuario(digital_selecionada);
@@ -151,7 +128,7 @@ public class frmAutenticar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAcessarActionPerformed
 
     private void lblSelDigitalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSelDigitalMouseClicked
-        digital_selecionada = frmAutenticar.carregarImagem(lblSelDigital);
+        digital_selecionada = Utilidade.carregarImagem(lblSelDigital);
         if (digital_selecionada != null){
             lblSelDigital.setText("");
             btnAcessar.setEnabled(true);
